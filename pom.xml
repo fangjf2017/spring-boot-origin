@@ -110,7 +110,7 @@
             <version>1.16.6</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
+            <groupId>junit</groupId>git
             <artifactId>junit</artifactId>
         </dependency>
         <dependency>
