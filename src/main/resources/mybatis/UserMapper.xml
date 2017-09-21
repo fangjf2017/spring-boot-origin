@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tuniu.ngsp.nws.mapper.dao.UserMapper">
+
+    <select id="findUserInfo" resultType="com.tuniu.ngsp.nws.mapper.dto.User">
+        select id,name,password from user
+    </select>
+
+    <insert id="inserUserInfo" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.tuniu.ngsp.nws.mapper.dto.User">
+            INSERT INTO USER (
+                name,
+                age,
+                password
+                )
+                VALUES
+                (#{name},  #{age}, #{password});
+    </insert>
+
+    <update id="updateUserInfo" parameterType="com.tuniu.ngsp.nws.mapper.dto.User" >
+        <selectKey keyProperty='id' resultType='int' order='BEFORE'>
+            SELECT
+            (select id FROM USER WHERE
+            id = #{id})id
+            from DUAL
+        </selectKey>
+            UPDATE USER
+            SET NAME = 'DEMO'
+            WHERE
+                id = #{id}
+    </update>
+
+    <delete id="delUserInfo" parameterType="com.tuniu.ngsp.nws.mapper.dto.User">
+
+      DELETE  FROM  user WHERE  id = #{id}
+</delete>
+
+</mapper>
