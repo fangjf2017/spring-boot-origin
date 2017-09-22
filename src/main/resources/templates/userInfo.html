@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<!--jquery的CDN库-->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.map"/>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"/>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"/>
+<!--自定义js方法-->
+<script th:src="@{js/test.js}"/>
+<body>
+<a th:href="@{js/test.js}">Content路径,默认访问static下的js文件夹</a>
+<p th:text="'Hello！, ' + ${user.name} + '!'">3333</p>
+</body>
+</html>
