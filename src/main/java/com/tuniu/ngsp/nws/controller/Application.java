@@ -1,5 +1,6 @@
 package com.tuniu.ngsp.nws.controller;
 
+import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 import org.apache.tomcat.jdbc.pool.DataSource;
@@ -16,6 +17,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import javax.jms.Queue;
+
 /**
  * Created by fanshuai on 2017/9/14.
  * <p>
@@ -25,7 +28,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Controller
 @EnableAutoConfiguration
 //指定扫描所有的bean文件
-@ComponentScan(value="com.*")
+@ComponentScan(value = "com.*")
 @SpringBootApplication
 @MapperScan("com.tuniu.ngsp.nws.mapper")
 public class Application {
@@ -34,7 +37,7 @@ public class Application {
 
     //DataSource配置
     @Bean
-    @ConfigurationProperties(prefix="spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
         return new org.apache.tomcat.jdbc.pool.DataSource();
     }
@@ -56,6 +59,12 @@ public class Application {
     @Bean
     public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource());
+    }
+
+
+    @Bean
+    public Queue queue() {
+        return new ActiveMQQueue("sample.queue");
     }
 
 
