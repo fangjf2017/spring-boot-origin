@@ -35,7 +35,8 @@ public class DemoInfoRepositoryImpl implements DemoInfoRepository {
 
     @Override
     public Object save(Object o) {
-        return null;
+        mongoTemplate.save(o);
+        return 0;
     }
 
     @Override
