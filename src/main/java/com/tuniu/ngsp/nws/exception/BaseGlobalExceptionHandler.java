@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * 异常处理的基类
  */
 @Component
-@ControllerAdvice
+@ControllerAdvice("com.tuniu.ngsp.nws.controller")
 public class BaseGlobalExceptionHandler {
 
     protected static final Logger logger = null;

@@ -40,7 +40,7 @@ public class DemoForSwaggerController {
         m.put("name", "test");
         m.put("password", "123");
         try {
-            List<?> l = Lists.newArrayList();
+             List<?> l = Lists.newArrayList();
             l.clear();
             System.out.println(l.get(100));
         } catch (Exception e) {
