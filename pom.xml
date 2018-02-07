@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!--用车订单问题自助排查系统-->
-    <groupId>com.tuniu.ngsp.nws</groupId>
+    <groupId>com.fanshuai.ngsp.nws</groupId>
     <artifactId>car-ord-by</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
@@ -15,7 +15,7 @@
     </parent>
     <properties>
         <!-- The main class to start by executing java -jar -->
-        <!--<start-class>com.tuniu.ngsp.nws.controller.Application</start-class>-->
+        <!--<start-class>Application</start-class>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
@@ -180,6 +180,17 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>5.0.0.Alpha2</version>
+        </dependency>
+        <!--druid监控-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.6</version>
         </dependency>
     </dependencies>
     <!--多环境设置-->
