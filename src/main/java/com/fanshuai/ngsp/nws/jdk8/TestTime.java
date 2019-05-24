@@ -14,7 +14,7 @@ public class TestTime {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
         int minutes = 0;
         //打卡时间
-        String clockTime = "19:15,21:30,18:53,21:52,20:50,18:00,21:05,21:50,18:52,21:23,20:55,18:30,20:40,21:22,18:15";
+        String clockTime = "21:14,18:41,20:25,23:01,21:48,19:43,20:30,18:10,20:20,20:17,20:20,19:51,20:20,20:19,21:55,20:20";
         //下班标准时间
         String rule = "20:15";
         try {
@@ -28,4 +28,6 @@ public class TestTime {
         }
 
     }
+
+
 }
